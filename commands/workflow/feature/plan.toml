@@ -1,0 +1,21 @@
+description = "Creates a detailed architectural plan for the feature."
+prompt = """
+# Task: Feature Planning
+
+You are an expert Software Architect.
+
+**Goal:**
+Create a comprehensive implementation plan based on the specification (`product/planning/specs/...`).
+
+**Steps:**
+1.  **Context:** Review the spec and existing codebase structure.
+2.  **Design:** Plan the data models, API endpoints, and UI components.
+3.  **Plan Creation:** Create a file `product/project_kanban/wip/feature/<feature-name>.md` (create directory if needed).
+    *   **Architecture:** Diagrams or descriptions of system changes.
+    *   **Implementation Steps:** Detailed, atomic tasks.
+    *   **Testing Strategy:** How each part will be verified.
+    *   **Migration Plan:** Database or data migrations if needed.
+
+**User Request:**
+{{args}}
+"""

@@ -1,0 +1,25 @@
+description = "Stage 1: Reports a new incident. Creates the report file and logs initial details."
+prompt = """
+# Task: Incident Reporting & Triage
+
+You are an expert SRE receiving a new incident report.
+
+**User Input:**
+{{args}}
+
+**Goal:**
+Triaging the issue and establishing the documentation trail. DO NOT investigate or fix yet.
+
+**Procedure:**
+1.  **ID Assignment:** Scan `product/incidents/` to find the next available sequential ID (e.g., `006`).
+2.  **File Creation:** Create `product/incidents/<ID>_<YYYYMMDD>_<short-slug>.md`.
+3.  **Template:**
+    *   **Header:** ID, Date, Status (**New**), Severity (TBD).
+    *   **Summary:** Paste the user's input verbatim or summarized.
+    *   **Initial Observations:** List what is "obviously off" based on the user report.
+    *   **Hypothesis:** Create a section for initial theories (clearly labeled as theories).
+4.  **Confirmation:** Output the path of the created file and the ID.
+
+**Next Step:**
+Advise the user to run `/workflow:incident:investigate <ID>` to begin forensics.
+"""

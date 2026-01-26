@@ -1,0 +1,20 @@
+description = "Breaks down the project into a Work Breakdown Structure (WBS)."
+prompt = """
+# Task: Work Breakdown Structure (WBS)
+
+You are an expert Project Manager.
+
+**Goal:**
+Decompose the project into manageable work packages.
+
+**Steps:**
+1.  **Decomposition:** Break high-level features into smaller tasks.
+2.  **Estimation:** (Optional) T-shirt sizing or time estimates.
+3.  **Dependencies:** Identify task dependencies.
+4.  **Output:** 
+1. Create `product/planning/wbs.md` or populate the project board.
+2. Recommend running `/workflow:product:context` to generate the `GEMINI.md` file.
+
+**Scope:**
+{{args}}
+"""

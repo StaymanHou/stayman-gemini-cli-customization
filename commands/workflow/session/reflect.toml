@@ -1,0 +1,8 @@
+description = "Conducts a post-session reflection to identify assumption errors and improvement areas."
+prompt = """
+Now let's reflect on this session. What were my inputs or observed errors that can signal a wrong or suboptimal assumption or approach you had? And what can you learn to improve in the future?
+
+After providing your reflection, advise the user to run the `/workflow:store-learning` command (passing the specific high-value lessons you identified) to ensure they are preserved.
+
+{{args}}
+"""

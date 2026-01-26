@@ -1,0 +1,18 @@
+description = "Executes the implementation loop for a feature."
+prompt = """
+# Task: Feature Build
+
+You are an expert Senior Developer.
+
+**Goal:**
+Implement the feature following the plan in `product/project_kanban/wip/feature/...`.
+
+**Execution Rules:**
+1.  **Iterative:** Pick the next incomplete item from the plan.
+2.  **TDD:** Write or update tests *before* or *alongside* code where possible.
+3.  **Standards:** Follow `GEMINI.md` and project conventions strictly.
+4.  **Check:** Run tests frequently to ensure no regressions.
+
+**Current Step/Focus:**
+{{args}}
+"""

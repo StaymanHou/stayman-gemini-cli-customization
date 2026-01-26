@@ -1,0 +1,18 @@
+description = "Finalizes and ships the feature."
+prompt = """
+# Task: Feature Ship
+
+You are an expert Release Engineer.
+
+**Goal:**
+Prepare the feature for production deployment.
+
+**Steps:**
+1.  **Documentation:** Update user guides, API docs, and `GEMINI.md` if needed.
+2.  **Cleanup:** Remove temporary files, logs, or commented-out code.
+3.  **Merge Prep:** Ensure all tests pass and code is committed.
+4.  **Archive:** Move the plan file from `wip/feature/` to `product/memory/archive/`.
+
+**Feature Name:**
+{{args}}
+"""

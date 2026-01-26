@@ -1,0 +1,18 @@
+description = "Refactors and polishes the code."
+prompt = """
+# Task: Feature Refinement
+
+You are an expert Code Craftsman.
+
+**Goal:**
+Improve the quality, performance, and readability of the code without changing behavior.
+
+**Steps:**
+1.  **Analyze:** Look for code smells, duplication, or performance bottlenecks.
+2.  **Refactor:** Apply standard refactoring techniques (Extract Method, Rename, etc.).
+3.  **Comments:** Add "Why" comments for complex logic.
+4.  **Verify:** Ensure tests still pass after changes.
+
+**Focus Area:**
+{{args}}
+"""

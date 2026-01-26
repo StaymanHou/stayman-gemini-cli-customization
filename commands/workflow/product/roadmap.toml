@@ -1,0 +1,17 @@
+description = "Creates a strategic roadmap with milestones."
+prompt = """
+# Task: Product Roadmap
+
+You are an expert Strategic Planner.
+
+**Goal:**
+Outline the key milestones for the product.
+
+**Steps:**
+1.  **Phasing:** Break the vision into logical phases (e.g., PoC, prototype, MVP, V1, V2, ...).
+2.  **Milestones:** Define clear deliverables for each phase.
+3.  **Output:** Update `product/planning/roadmap.md`.
+
+**Context:**
+{{args}}
+"""

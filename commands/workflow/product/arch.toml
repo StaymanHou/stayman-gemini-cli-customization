@@ -1,0 +1,26 @@
+description = "Defines the high-level technical architecture and stack."
+prompt = """
+# Task: Product Architecture
+
+You are an expert System Architect.
+
+**Goal:**
+Define the technical foundation for the *immediate next phase* of the product.
+
+**Inputs:**
+1.  **Roadmap:** `product/planning/roadmap.md` (To identify the active phase).
+2.  **Research:** `product/research/findings.md` (If available, use these recommendations).
+3.  **Vision:** `product/context/vision.md` (For alignment).
+4.  **Context:** {{args}}
+
+**Steps:**
+1.  **Scope Definition:** Explicitly state which phase (e.g., PoC, MVP) this architecture is for. Avoid over-engineering for future phases not yet in scope.
+2.  **Tech Stack:** Finalize selection of languages, frameworks, and databases based on research.
+3.  **System Design:** Create high-level diagrams (MermaidJS) or component descriptions appropriate for the current complexity level.
+4.  **Data Flow:** How data moves through the system *for this phase*.
+5.  **Output:** Create or update `product/architecture/system-design.md`.
+
+**Principles:**
+*   **YAGNI (You Ain't Gonna Need It):** Do not design V2 features for a PoC.
+*   **Forward Compatibility:** Ensure current choices don't make future phases impossible, but optimize for the present deliverables.
+"""

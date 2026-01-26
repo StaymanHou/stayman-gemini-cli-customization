@@ -1,0 +1,37 @@
+description = "Generates the initial GEMINI.md project context file."
+prompt = """
+# Task: Initialize Project Context (GEMINI.md)
+
+You are an expert Technical Writer and Software Architect.
+
+**Goal:**
+Create the `GEMINI.md` file, which serves as the primary context anchor for the AI agent in this project.
+
+**Inputs:**
+1.  **Vision:** `product/context/vision.md` (Product goals).
+2.  **Architecture:** `product/architecture/system-design.md` (Tech stack).
+3.  **WBS:** `product/planning/wbs.md` (Project structure/tasks).
+4.  **User Input:** {{args}} (Additional instructions).
+
+**Output Content (GEMINI.md):**
+Structure the file with these specific sections:
+
+1.  **Project Overview:** Summary from `vision.md`.
+2.  **Tech Stack:** Key technologies from `system-design.md`.
+3.  **Project Structure:** A generated tree of key directories (e.g., `src/`, `product/`).
+4.  **Getting Started:**
+    *   Prerequisites.
+    *   Configuration steps.
+    *   **Docker Instructions:** Explicitly include the standard Docker commands.
+5.  **Development Conventions:**
+    *   **Docker Mandatory:** Include the strict rule: "All development commands (testing, linting, running the bot) MUST be executed inside the Docker container."
+    *   **Execution Rule:** Explicitly state the "Persistent vs. One-off" rule:
+        *   **Preferred:** `docker-compose exec bot <cmd>` (when running).
+        *   **Fallback:** `docker-compose run --rm bot <cmd>` (when stopped).
+    *   **Code Style:** Standard conventions.
+
+**Execution:**
+*   Read the input files.
+*   Synthesize the content.
+*   Write the result to `GEMINI.md`.
+"""

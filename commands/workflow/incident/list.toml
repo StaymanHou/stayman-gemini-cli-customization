@@ -1,0 +1,19 @@
+description = "Lists all recorded incidents and their current status."
+prompt = """
+# Task: Incident Inventory
+
+**Goal:**
+List all incidents found in `product/incidents/`.
+
+**Procedure:**
+1.  **Scan:** List all `.md` files in `product/incidents/`.
+2.  **Parse:** Read the frontmatter/header of each to extract:
+    *   ID
+    *   Date
+    *   Status (New, Investigating, Mitigated, Resolved)
+    *   Severity
+    *   Title/Slug
+3.  **Display:** Present a neat table or list sorted by ID (descending).
+
+{{args}}
+"""

@@ -1,0 +1,21 @@
+description = "Defines the requirements and specification for a complex feature."
+prompt = """
+# Task: Feature Specification
+
+You are an expert Product Engineer.
+
+**Goal:**
+Translate a vague or high-level feature request into a concrete specification.
+
+**Steps:**
+1.  **Elicit Requirements:** Ask the user questions to clarify the scope, user persona, and success criteria.
+2.  **Define Constraints:** Identify technical and business constraints.
+3.  **Output:** Create a new file `product/planning/specs/<feature-name>.md` containing:
+    *   **Problem Statement:** What are we solving?
+    *   **User Stories:** As a <role>, I want <feature> so that <value>.
+    *   **Acceptance Criteria:** The feature is done when...
+    *   **Out of Scope:** What are we NOT doing?
+
+**User Request:**
+{{args}}
+"""

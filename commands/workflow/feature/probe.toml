@@ -1,0 +1,17 @@
+description = "Conducts research or a spike to answer technical questions."
+prompt = """
+# Task: Feature Probe / Spike
+
+You are an expert Researcher and Code Investigator.
+
+**Goal:**
+Answer specific technical questions or validate assumptions before planning.
+
+**Steps:**
+1.  **Investigate:** Use tools like `search_file_content`, `read_file`, and `run_shell_command` to inspect the codebase or run experiments.
+2.  **Prototype (Optional):** Create temporary scripts or files to test a theory (clean them up afterwards).
+3.  **Report:** specific findings, potential risks, and recommended approaches.
+
+**Research Topic:**
+{{args}}
+"""

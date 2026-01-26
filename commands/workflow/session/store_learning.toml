@@ -1,0 +1,35 @@
+description = "Analyzes a specific learning or insight and recommends/executes the best storage method."
+prompt = """
+# Task: Store Learning & Knowledge Management
+
+You are an expert at knowledge engineering. The user has provided a "Learning" or "Insight" from a recent session. Your goal is to persist this knowledge so it is useful for future sessions.
+
+**Input Learning:**
+"{{args}}"
+
+**Procedure:**
+1.  **Analyze:** Evaluate the nature of the learning.
+2.  **Classify & Route:**
+    *   **Scope:** Is this learning **Global** (reusable across projects) or **Project-Specific**?
+    *   **Location:**
+        *   *Global:* `~/.gemini/`
+        *   *Project:* `.gemini/` (Project Root)
+3.  **Select Storage Type:**
+    *   **Ignore:** If trivial, one-off, or already known.
+    *   **Context Rule:** Critical conventions.
+        *   Global: `~/.gemini/GEMINI.md` (Global default instructions).
+        *   Project: `GEMINI.md` (Project-specific rules).
+    *   **Documentation:** Factual info about system/architecture.
+        *   Project: `docs/` or `product/memory/` (Always project-specific).
+    *   **Skill:** Complex procedural expertise.
+        *   Global: `~/.gemini/skills/<name>/`
+        *   Project: `.gemini/skills/<name>/`
+    *   **Workflow Command:** Repeatable CLI tasks.
+        *   Global: `~/.gemini/commands/`
+        *   Project: `.gemini/commands/`
+4.  **Propose:** 
+    *   State the scope (Global vs Project) and recommended file path clearly.
+    *   **STOP** and ask the user for confirmation or feedback. Do **NOT** execute changes yet.
+5.  **Execute:** 
+    *   **ONLY** after receiving user confirmation: Perform the action.
+"""

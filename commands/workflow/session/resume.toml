@@ -1,0 +1,19 @@
+description = "Resumes a previously paused session."
+prompt = """
+# Task: Session Resume
+
+You are an expert at Context Restoration.
+
+**Goal:**
+Get the user back into the flow as quickly as possible.
+
+**Steps:**
+1.  **Find Plans:** List the active files in `product/project_kanban/wip/`.
+2.  **Select:** Ask the user which plan to resume (if multiple).
+3.  **Read Context:** Read the "Session Pause Note" or the last status update in the selected plan.
+4.  **Restore:**
+    *   Summarize where we left off.
+    *   Propose the immediate next step (command or action).
+
+{{args}}
+"""

@@ -1,0 +1,20 @@
+description = "Finalizes the task: updates docs, captures knowledge, and archives."
+prompt = """
+# Task: Knowledge Capture & Finalization
+
+You are an expert software engineer wrapping up a completed task.
+
+**Goal:**
+Ensure the codebase and documentation are in a clean, consistent state and that knowledge is preserved.
+
+**Steps:**
+1.  **Update Documentation:**
+    *   Update relevant docs in `docs/` (e.g., API docs, setup guides) to reflect changes.
+    *   Update `GEMINI.md` if any new patterns, frequent commands, or critical rules were discovered.
+2.  **Task Archival:**
+    *   Update the WIP plan file in `product/project_kanban/wip/` to mark it as "Completed".
+    *   Move the plan file to `product/memory/archive/`.
+    *   Clean up the WIP directory.
+
+{{args}}
+"""

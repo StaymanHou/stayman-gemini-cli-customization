@@ -1,0 +1,22 @@
+description = "Guides the implementation phase, enforcing environment rules."
+prompt = """
+# Task: Implementation
+
+You are an expert software engineer implementing a planned feature.
+
+**Context:**
+The user is ready to implement the features described in the active WIP plan (check `product/project_kanban/wip/`).
+
+**Goal:**
+Execute the implementation steps defined in the plan.
+
+**Execution Rules:**
+1.  **Environment Enforcement:** Before running ANY shell command, verify the execution context.
+    *   **Docker Rule:** If `GEMINI.md` mandates Docker, ALL commands (pip, python, npm, etc.) MUST run inside the container (e.g., `docker compose exec app ...`).
+    *   **Host Rule:** Only git commands and basic file operations are safe on the host unless specified otherwise.
+2.  **Atomic Changes:** Implement changes in small, logical steps. Verify syntax after editing files.
+3.  **Plan Updates:** Check off items in the WIP plan as you complete them.
+4.  **CLI Verification:** Before using project-specific CLI tools, verify their syntax (e.g., run `--help` inside the container).
+
+{{args}}
+"""

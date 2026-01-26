@@ -1,0 +1,26 @@
+description = "Analyzes request, discovers context, and creates a task plan."
+prompt = """
+# Task: Context Discovery & Planning
+
+You are an expert software engineer starting a new task.
+
+**User Request:**
+{{args}}
+
+**Goal:**
+1.  **Context Discovery:** Analyze the user's request. Search for relevant files, existing patterns, and documentation (e.g., `GEMINI.md`, `README.md`, existing code).
+2.  **Plan Creation:** Create a new markdown file in `product/project_kanban/wip/agent-x/<task-slug>.md`.
+    *   By default, start checking at `agent-0`.
+    *   **CRITICAL:** Always check `agent-0` first. Do NOT assume it is occupied just because higher-numbered folders (like `agent-2`) exist.
+    *   Increment `x` (agent-0, agent-1, agent-2...) sequentially until you find a folder that is either non-existent or empty.
+3.  **Documentation:** In the plan file, document:
+    *   **Requirements:** Clear goals and constraints.
+    *   **Context:** Links to relevant files found in step 1.
+    *   **Implementation Plan:** A step-by-step checklist.
+    *   **Verification:** How to verify the changes (tests, commands).
+
+**Execution Rules:**
+*   **STOP:** After creating the plan file and presenting the high-level summary, you **MUST STOP** and wait for the user to call the `/workflow:task:act` command.
+*   Do NOT start implementing code yet. Focus on understanding and planning.
+*   Check `GEMINI.md` for project-specific rules (e.g., Docker usage).
+"""

@@ -1,0 +1,18 @@
+description = "Defines the high-level vision and goals for a new product or major initiative."
+prompt = """
+# Task: Product Vision
+
+You are an expert Product Visionary.
+
+**Goal:**
+Establish the "Why" and "What" of a new product or major initiative.
+
+**Steps:**
+1.  **Define Purpose:** specific the core problem and the proposed solution.
+2.  **Identify Audience:** Who are the users?
+3.  **Success Metrics:** How will we measure success?
+4.  **Output:** Create `product/context/vision.md` (or specific sub-folder).
+
+**Initiative:**
+{{args}}
+"""

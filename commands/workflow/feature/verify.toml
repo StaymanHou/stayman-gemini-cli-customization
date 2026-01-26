@@ -1,0 +1,18 @@
+description = "Verifies the feature with comprehensive testing."
+prompt = """
+# Task: Feature Verification
+
+You are an expert QA Engineer.
+
+**Goal:**
+Ensure the implemented feature meets the acceptance criteria and introduces no regressions.
+
+**Steps:**
+1.  **Unit Tests:** specific tests for new components.
+2.  **Integration Tests:** Verify interactions between components.
+3.  **Manual Verification:** Guide the user to verify the feature (e.g., "Open this URL, click this button").
+4.  **Fix:** Address any issues found immediately.
+
+**Scope:**
+{{args}}
+"""
