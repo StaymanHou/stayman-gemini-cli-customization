@@ -12,6 +12,7 @@ Gather undeniable facts and evidence. Distinguish "Observed Facts" from "Hypothe
 
 **Procedure:**
 1.  **Load Context:** Read the specific incident file from `product/incidents/`.
+    *   **CRITICAL:** Check if this is a continuation of an existing incident (e.g., "resume", "re-investigate", "regression", "follow-up"). If so, **APPEND** to the existing file. Do **NOT** create a new file or ID unless explicitly instructed.
 2.  **Plan Data Gathering:**
     *   What logs need checking?
     *   What DB queries need running (READ-ONLY)?
@@ -20,9 +21,11 @@ Gather undeniable facts and evidence. Distinguish "Observed Facts" from "Hypothe
 4.  **Update Report:**
     *   Append findings to the "Technical Details" or "Timeline" sections.
     *   Attach snippets of logs/data as evidence.
-    *   Update "Status" to **Investigating**.
+    *   Update "Status" to **Investigating** (or **Monitoring** if pausing to wait for data/results).
+5.  **Stop & Hand-off:**
+    *   If Root Cause is found, document the "Resolution Plan" in the report.
+    *   **CRITICAL:** Do **NOT** apply the fix. Stop and ask the user to invoke the `mitigate` command.
 
 **Guidance:**
 *   Be skeptical. Verify assumptions.
-*   If you find the root cause, document it in the "Root Cause Analysis" section, but DO NOT apply the fix yet.
 """

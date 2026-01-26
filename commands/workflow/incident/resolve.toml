@@ -10,6 +10,7 @@ Finalize the incident lifecycle.
 
 **Procedure:**
 1.  **Verify Resolution:** Confirm with the user that the issue is fully fixed.
+    *   **Constraint:** Ensure the incident has been in **Monitoring** state with no regressions before closing.
 2.  **Correct Data:** Propose and execute a plan to backfill or correct any corrupted production data.
 3.  **Final Polish:** Clean up the incident report (formatting, missing timestamps).
 4.  **Archive:** Create a summary in `product/memory/archive/` and update `product/memory/index.md`.

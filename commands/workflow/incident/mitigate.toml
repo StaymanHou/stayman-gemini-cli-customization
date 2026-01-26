@@ -14,8 +14,9 @@ Stop the bleeding or fix the root cause.
 1.  **Read Report:** Understand the "Root Cause Analysis" in the incident file.
 2.  **Plan Fix:** Propose the code change or config change.
 3.  **Implement:** Use standard development tools to apply the fix.
-4.  **Verify:** Ensure the issue is resolved.
-5.  **Update Report:** Change Status to **Mitigated**.
+4.  **Verify:** Ensure the issue is resolved and check specifically for regression risks.
+5.  **Update Report:** Change Status to **Monitoring**.
+    *   **CRITICAL:** Do NOT mark as "Resolved" yet. A monitoring period is required to ensure stability.
 
 **Safety:**
 Use standard deployment workflows.
