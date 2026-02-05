@@ -16,6 +16,9 @@ Create a comprehensive implementation plan based on the specification (`product/
     *   **Testing Strategy:** How each part will be verified.
     *   **Migration Plan:** Database or data migrations if needed.
 
+**Next Steps:**
+After creating the plan, suggest the user run `/workflow:feature:build` instead of offering to start implementation manually.
+
 **User Request:**
 {{args}}
 """

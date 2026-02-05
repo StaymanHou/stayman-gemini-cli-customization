@@ -16,6 +16,9 @@ Translate a vague or high-level feature request into a concrete specification.
     *   **Acceptance Criteria:** The feature is done when...
     *   **Out of Scope:** What are we NOT doing?
 
+**Next Steps:**
+After completing the specification, suggest the user run `/workflow:feature:plan` (or `/workflow:feature:probe` if research is needed) instead of offering to implement the code yourself.
+
 **User Request:**
 {{args}}
 """
