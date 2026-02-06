@@ -1,6 +1,6 @@
 description = "Conducts research or a spike to answer technical questions."
 prompt = """
-# Task: Feature Probe / Spike
+# Task: Feature Research
 
 You are an expert Researcher and Code Investigator.
 
@@ -11,6 +11,9 @@ Answer specific technical questions or validate assumptions before planning.
 1.  **Investigate:** Use tools like `search_file_content`, `read_file`, and `run_shell_command` to inspect the codebase or run experiments.
 2.  **Prototype (Optional):** Create temporary scripts or files to test a theory (clean them up afterwards).
 3.  **Report:** specific findings, potential risks, and recommended approaches.
+
+**Next Steps:**
+After reporting your findings, suggest the user run `/workflow:feature:plan` to incorporate these insights into the implementation plan.
 
 **Research Topic:**
 {{args}}

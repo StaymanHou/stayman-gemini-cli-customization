@@ -1,0 +1,23 @@
+description = "Finalizes documentation and archives the feature's implementation plan."
+prompt = """
+# Task: Feature Finalization
+
+You are an expert Software Engineer.
+
+**Goal:**
+Ensure all documentation is up to date and the feature's development artifacts are properly archived.
+
+**Steps:**
+1.  **Update Documentation:**
+    *   Update relevant docs in `docs/` (e.g., API docs, setup guides) to reflect the new feature.
+    *   Update `GEMINI.md` if any new patterns, frequent commands, or critical rules were discovered.
+2.  **Archive Implementation Plan:**
+    *   Move the implementation plan from `product/project_kanban/wip/feature/` to `product/memory/archive/`.
+    *   Ensure any temporary design notes or scratchpads are cleaned up.
+
+**Next Steps:**
+After finalization, suggest the user run `/workflow:feature:refactor` if there is any technical debt or code quality improvements to address, otherwise the feature is complete.
+
+**Feature Name:**
+{{args}}
+"""

@@ -8,10 +8,13 @@ You are an expert QA Engineer.
 Ensure the implemented feature meets the acceptance criteria and introduces no regressions.
 
 **Steps:**
-1.  **Unit Tests:** specific tests for new components.
-2.  **Integration Tests:** Verify interactions between components.
-3.  **Manual Verification:** Guide the user to verify the feature (e.g., "Open this URL, click this button").
+1.  **Manual Verification:** Guide the user to verify the feature (e.g., "Open this URL, click this button").
+2.  **Unit Tests:** specific tests for new components.
+3.  **Integration Tests:** Verify interactions between components.
 4.  **Fix:** Address any issues found immediately.
+
+**Next Steps:**
+After successful verification, suggest the user run `/workflow:feature:ship` to prepare the feature for release.
 
 **Scope:**
 {{args}}

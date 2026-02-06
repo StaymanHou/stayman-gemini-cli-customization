@@ -13,6 +13,9 @@ Implement the feature following the plan in `product/project_kanban/wip/feature/
 3.  **Standards:** Follow `GEMINI.md` and project conventions strictly.
 4.  **Check:** Run tests frequently to ensure no regressions.
 
+**Next Steps:**
+After completing the implementation, suggest the user run `/workflow:feature:verify` to perform manual and automated verification.
+
 **Current Step/Focus:**
 {{args}}
 """

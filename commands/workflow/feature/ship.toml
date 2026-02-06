@@ -8,10 +8,12 @@ You are an expert Release Engineer.
 Prepare the feature for production deployment.
 
 **Steps:**
-1.  **Documentation:** Update user guides, API docs, and `GEMINI.md` if needed.
-2.  **Cleanup:** Remove temporary files, logs, or commented-out code.
-3.  **Merge Prep:** Ensure all tests pass and code is committed.
-4.  **Archive:** Move the plan file from `wip/feature/` to `product/memory/archive/`.
+1.  **Cleanup:** Remove temporary files, logs, or commented-out code.
+2.  **Final Verification:** Ensure all tests pass in the final merged or release-ready state.
+3.  **Release Prep:** Prepare the commit or PR for final merging into the main branch.
+
+**Next Steps:**
+After shipping the feature, suggest the user run `/workflow:feature:finalize` to finalize documentation and archive the plan.
 
 **Feature Name:**
 {{args}}

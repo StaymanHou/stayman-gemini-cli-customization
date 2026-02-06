@@ -1,6 +1,6 @@
 description = "Refactors and polishes the code."
 prompt = """
-# Task: Feature Refinement
+# Task: Feature Refactoring
 
 You are an expert Code Craftsman.
 
@@ -12,6 +12,9 @@ Improve the quality, performance, and readability of the code without changing b
 2.  **Refactor:** Apply standard refactoring techniques (Extract Method, Rename, etc.).
 3.  **Comments:** Add "Why" comments for complex logic.
 4.  **Verify:** Ensure tests still pass after changes.
+
+**Next Steps:**
+After refactoring, if there are no more areas to improve, the feature workflow is complete.
 
 **Focus Area:**
 {{args}}
