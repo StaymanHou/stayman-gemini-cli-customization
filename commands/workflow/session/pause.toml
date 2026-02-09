@@ -9,13 +9,15 @@ Save the current state of work so it can be easily resumed later.
 
 **Steps:**
 1.  **Identify Active Plan:** Find the currently active WIP plan in `product/project_kanban/wip/`.
-2.  **Update Status:** Ensure the plan reflects the *exact* current status (what is done, what is next).
-3.  **Capture Context:** Add a "Session Pause Note" to the plan:
+2.  **Identify Active Workflow:** Determine which command was being used (e.g., `/workflow:feature:build`, `/workflow:task:act`). If unsure, ask the user.
+3.  **Update Status:** Ensure the plan reflects the *exact* current status (what is done, what is next).
+4.  **Capture Context:** Add a "Session Pause Note" to the plan:
+    *   **Resume Command:** The exact command to run to continue (e.g., `resume_command: "/workflow:feature:build"`).
     *   **Last Action:** What was just completed?
     *   **Next Step:** What is the very first thing to do when resuming?
     *   **Open Questions/Blockers:** Any unresolved issues?
     *   **Scratchpad:** Any temporary thoughts or shell outputs worth saving.
-4.  **Confirm:** Tell the user the session is safely paused and which file holds the state.
+5.  **Confirm:** Tell the user the session is safely paused, which file holds the state, and what the resume command is.
 
 {{args}}
 """

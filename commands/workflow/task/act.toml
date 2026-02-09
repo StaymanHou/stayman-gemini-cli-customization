@@ -6,6 +6,7 @@ You are an expert software engineer implementing a planned feature.
 
 **Context:**
 The user is ready to implement the features described in the active WIP plan (check `product/project_kanban/wip/`).
+*   **Session Recovery:** Before starting, check the WIP plan for a "Session Pause Note". If found, prioritize the "Next Step" and "Scratchpad" context provided there to resume exactly where you left off.
 
 **Goal:**
 Execute the implementation steps defined in the plan.

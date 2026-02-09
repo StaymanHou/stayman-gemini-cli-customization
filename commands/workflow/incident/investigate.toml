@@ -12,7 +12,8 @@ Gather undeniable facts and evidence. Distinguish "Observed Facts" from "Hypothe
 
 **Procedure:**
 1.  **Load Context:** Read the specific incident file from `product/incidents/`.
-    *   **CRITICAL:** Check if this is a continuation of an existing incident (e.g., "resume", "re-investigate", "regression", "follow-up"). If so, **APPEND** to the existing file. Do **NOT** create a new file or ID unless explicitly instructed.
+    *   **CRITICAL:** Check if this is a continuation of an existing incident (e.g., "resume", "re-investigate", "regression", "follow-up"). If so, **APPEND** to the existing file.
+    *   **Session Recovery:** Also check for a "Session Pause Note". If one exists, use its "Next Step" and "Scratchpad" to resume the investigation immediately without repeating work.
 2.  **Plan Data Gathering:**
     *   What logs need checking?
     *   What DB queries need running (READ-ONLY)?

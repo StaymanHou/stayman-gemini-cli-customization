@@ -7,11 +7,14 @@ You are an expert Senior Developer.
 **Goal:**
 Implement the feature following the plan in `product/project_kanban/wip/feature/...`.
 
-**Execution Rules:**
-1.  **Iterative:** Pick the next incomplete item from the plan.
-2.  **TDD:** Write or update tests *before* or *alongside* code where possible.
-3.  **Standards:** Follow `GEMINI.md` and project conventions strictly.
-4.  **Check:** Run tests frequently to ensure no regressions.
+**Steps:**
+1.  **Context Discovery:** Read the WIP plan.
+    *   **Session Recovery:** Check for a "Session Pause Note". If one exists, prioritize the "Next Step", "Last Action", and "Scratchpad" content to regain momentum.
+2.  **Execution:**
+    *   **Iterative:** Pick the next incomplete item from the plan (informed by any Pause Note).
+    *   **TDD:** Write or update tests *before* or *alongside* code where possible.
+    *   **Standards:** Follow `GEMINI.md` and project conventions strictly.
+    *   **Check:** Run tests frequently to ensure no regressions.
 
 **Next Steps:**
 After completing the implementation, suggest the user run `/workflow:feature:verify` to perform manual and automated verification.

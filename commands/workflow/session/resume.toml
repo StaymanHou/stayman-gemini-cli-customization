@@ -11,9 +11,11 @@ Get the user back into the flow as quickly as possible.
 1.  **Find Plans:** List the active files in `product/project_kanban/wip/`.
 2.  **Select:** Ask the user which plan to resume (if multiple).
 3.  **Read Context:** Read the "Session Pause Note" or the last status update in the selected plan.
+    *   **CRITICAL:** Look for a `resume_command` (e.g., `/workflow:feature:build`) in the pause note or metadata.
 4.  **Restore:**
     *   Summarize where we left off.
-    *   Propose the immediate next step (command or action).
+    *   **Explicit Handoff:** If a `resume_command` was found, explicitly tell the user: "To continue with the previous workflow mindset, please run `<resume_command>`."
+    *   Otherwise, propose the immediate next step based on the plan's status.
 
 {{args}}
 """
