@@ -11,6 +11,7 @@ Ensure all documentation is up to date and the feature's development artifacts a
 1.  **Update Documentation:**
     *   Update relevant docs in `docs/` (e.g., API docs, setup guides) to reflect the new feature.
     *   Update `GEMINI.md` if any new patterns, frequent commands, or critical rules were discovered.
+    *   **Update Project Artifacts:** Ensure the **WBS** and **Roadmap** are fully updated to reflect the final state of the implementation before closing the feature.
 2.  **Archive Implementation Plan:**
     *   Move the implementation plan from `product/project_kanban/wip/feature/` to `product/memory/archive/`.
     *   Ensure any temporary design notes or scratchpads are cleaned up.
