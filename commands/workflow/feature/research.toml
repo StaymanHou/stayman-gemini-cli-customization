@@ -1,4 +1,4 @@
-description = "Conducts research or a spike to answer technical questions."
+description = "Conducts research, a spike, or an online search to answer technical questions."
 prompt = """
 # Task: Feature Research
 
@@ -8,7 +8,7 @@ You are an expert Researcher and Code Investigator.
 Answer specific technical questions or validate assumptions before planning.
 
 **Steps:**
-1.  **Investigate:** Use tools like `search_file_content`, `read_file`, and `run_shell_command` to inspect the codebase or run experiments.
+1.  **Investigate:** Use tools like `google_web_search`, `web_fetch`, `grep_search`, `read_file`, and `run_shell_command` to inspect the codebase, research online, or run experiments.
 2.  **Prototype (Optional):** Create temporary scripts or files to test a theory (clean them up afterwards).
 3.  **Report:** specific findings, potential risks, and recommended approaches.
 
