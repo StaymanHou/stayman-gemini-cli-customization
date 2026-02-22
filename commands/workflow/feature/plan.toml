@@ -12,7 +12,7 @@ Create a comprehensive implementation plan based on the specification (`product/
 2.  **Design:** Plan the data models, API endpoints, and UI components.
 3.  **Plan Creation:** Create a file `product/project_kanban/wip/feature/<feature-name>.md` (create directory if needed).
     *   **Architecture:** Diagrams or descriptions of system changes.
-    *   **Implementation Steps:** Detailed, atomic tasks.
+    *   **Implementation Stages:** Detailed, atomic tasks grouped by implementation stage (e.g., Stage 1: Logic, Stage 2: UI).
     *   **Testing Strategy:** How each part will be verified.
     *   **Migration Plan:** Database or data migrations if needed.
 

@@ -5,10 +5,10 @@ prompt = """
 You are an expert Project Manager.
 
 **Goal:**
-Decompose the project into manageable work packages.
+Decompose the project into manageable Work Packages (WP).
 
 **Steps:**
-1.  **Decomposition:** Break high-level features into smaller tasks.
+1.  **Decomposition:** Break high-level features into Work Packages (WP).
 2.  **Estimation:** (Optional) T-shirt sizing or time estimates.
 3.  **Dependencies:** Identify task dependencies.
 4.  **Output:** 
