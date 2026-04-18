@@ -28,10 +28,20 @@ verify_result() {
     done
   fi
 
-  # 3. Evaluate
-  if [ "$found_transition" = "$expected_id" ]; then
+  # 3. Evaluate — expected_id may be pipe-separated (e.g., "F1|F3|F4")
+  local expected_match=false
+  if [ -n "$found_transition" ]; then
+    IFS='|' read -ra EXP_ARRAY <<< "$expected_id"
+    for exp in "${EXP_ARRAY[@]}"; do
+      if [ "$found_transition" = "$exp" ]; then
+        expected_match=true
+        break
+      fi
+    done
+  fi
+  if [ "$expected_match" = true ]; then
     if [ -n "$negative_hits" ]; then
-      VERIFY_DETAIL="Structured match on $expected_id but also mentioned: ${negative_hits%%, }"
+      VERIFY_DETAIL="Structured match on $found_transition but also mentioned: ${negative_hits%%, }"
       return 0  # Still PASS — structured match is authoritative
     fi
     VERIFY_DETAIL="Structured match: TRANSITION: $found_transition"
@@ -43,10 +53,16 @@ verify_result() {
     IFS='|' read -ra CA_ARRAY <<< "$contains_any"
     for ca in "${CA_ARRAY[@]}"; do
       if echo "$result_text" | grep -qi "$ca"; then
-        if [ -n "$negative_hits" ]; then
-          VERIFY_DETAIL="Contains '$ca' but also mentioned: ${negative_hits%%, }"
+        local wrong_note=""
+        if [ -n "$found_transition" ]; then
+          wrong_note="wrong TRANSITION id ($found_transition vs $expected_id), "
         else
-          VERIFY_DETAIL="Contains '$ca' (no structured TRANSITION line)"
+          wrong_note="no TRANSITION line, "
+        fi
+        if [ -n "$negative_hits" ]; then
+          VERIFY_DETAIL="${wrong_note}contains '$ca', but also mentioned: ${negative_hits%%, }"
+        else
+          VERIFY_DETAIL="${wrong_note}contains '$ca'"
         fi
         return 1  # SOFT_PASS
       fi

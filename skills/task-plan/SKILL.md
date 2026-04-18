@@ -13,10 +13,13 @@ You are an expert software engineer starting a new task.
 
 You are in the **task** workflow at the **plan** state.
 
-**Valid transitions from here:**
-- **T2 → act:** Plan is clear, ready to implement → tell user to run `/task-act`
-- **T3 → ESCALATE to feature:spec:** "This is bigger than a task" — close the task plan, update docs, tell user to run `/feature-spec`
-- **T4 → REDIRECT to feature:research:** Research needed before acting — pause task, tell user to run the research, then return
+**Valid transitions from here — pick EXACTLY ONE:**
+
+- **T2 → act (DEFAULT):** The request is a clear, bounded task and the implementation is straightforward → tell user to run `/task-act`.
+- **T3 → ESCALATE to feature:spec:** ONLY if the request requires new data models, new API endpoints, architectural decisions, or multiple phases → tell user to run `/feature-spec`.
+- **T4 → REDIRECT to feature:research:** ONLY if there are concrete unknowns (unfamiliar library, undocumented API, unclear performance target) that must be answered before a plan can even be written → tell user to run the research, then return.
+
+When in doubt, choose **T2**. T3 and T4 are exceptions reserved for scope or knowledge gaps.
 
 ## Procedure
 

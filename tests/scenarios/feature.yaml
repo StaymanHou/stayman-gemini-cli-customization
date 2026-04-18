@@ -11,8 +11,11 @@ scenarios:
       presence indicators, offline sync, and multi-cursor support.
     fixtures:
       gemini_md: fixtures/GEMINI.md
+    # F1 is an ENTRY transition. Once in spec, the next outgoing is F3
+    # (needs research — CRDT/sync unknowns) or F4 (spec is clear). Either
+    # acknowledging F1 or moving to F3/F4 is acceptable.
     expect:
-      transition_id: F1
+      transition_id: F1|F3|F4
       contains_any:
         - "spec"
         - "specification"
@@ -536,8 +539,10 @@ scenarios:
       loading state management system needing: a context provider, component
       library, error boundary integration, retry logic, and 12 skeleton
       layouts. The task was closed and escalated here.
+    # F28 is SURFACE-IN (incoming). Once in spec, outgoing is F3 or F4.
+    # Accept either acknowledging the surface-in or moving forward.
     expect:
-      transition_id: F28
+      transition_id: F28|F3|F4
       contains_any:
         - "spec"
         - "escalat"

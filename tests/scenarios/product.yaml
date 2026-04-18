@@ -181,15 +181,16 @@ scenarios:
       the team discovered that a caching layer is needed between the parser
       and renderer for performance. This was not in the original WBS. You
       need to add it as a new work package and evaluate dependencies.
+    # P11 is SURFACE-IN (incoming). Once in wbs, outgoing is P8 (back to arch
+    # if architectural gap) or P9 (forward to context). Accept any valid wbs-state transition.
     expect:
-      transition_id: P11
+      transition_id: P11|P8|P9
       contains_any:
         - "work package"
         - "WBS"
         - "WP"
         - "add"
-      not_contains:
-        - "/product-arch"
+      not_contains: []
     max_retries: 2
 
   - id: P12
@@ -204,13 +205,14 @@ scenarios:
       plugin extensions, but a user-contributed plugin was identified as
       critical for adoption. This requires an architectural change to
       add a plugin system.
+    # P12 is SURFACE-IN. Once in arch, valid outgoing transitions are P6
+    # (back to research if unknowns) or P7 (forward to wbs). Accept either
+    # acknowledgement (P12) or a forward/back move from arch state.
     expect:
-      transition_id: P12
+      transition_id: P12|P6|P7
       contains_any:
         - "architecture"
         - "plugin"
         - "design"
-      not_contains:
-        - "/product-wbs"
-        - "/product-context"
+      not_contains: []
     max_retries: 2

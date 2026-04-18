@@ -32,17 +32,23 @@ TIMEOUT_SECS=120  # per-invocation timeout
 SHARED_PROMPT='TESTING MODE — TRANSITION VERIFICATION
 
 You are being tested on whether you select the correct state machine transition.
-After your analysis, you MUST include this exact line in your response:
+
+PROCEDURE:
+1. Read the skill body carefully. Find the section listing "Valid transitions" — it enumerates the transitions available from the current state, each with an ID (like T2, F15, P3, I7, S1) and a condition.
+2. Analyze the input against those conditions. Pick EXACTLY ONE transition ID.
+3. Briefly describe what you WOULD do (do NOT actually execute — no file writes, no shell commands).
+4. Close your response with this line, verbatim, on its own line near the end:
 
 TRANSITION: <id> (<from> → <to>)
 
-For example: TRANSITION: T2 (plan → act)
+where <id> is the transition ID you chose (literal characters from the skill body — NOT a UUID, NOT a hash, NOT the skill name).
 
-This line is REQUIRED. Place it near the end of your response, before giving
-the user instruction to run the next skill.
-
-Do NOT actually create or modify any files. Do NOT run any commands.
-Instead, describe what you WOULD do and which transition you are taking.'
+CRITICAL RULES:
+- The ID MUST appear literally in the skill body. Copy it character-for-character (e.g., T2, F15, P3, I7, S1).
+- Do NOT invent IDs. Do NOT generate UUIDs. Do NOT use the skill name.
+- If the skill body shows IDs like T1, T2, T3, T4: pick ONE of those exact strings.
+- Output EXACTLY ONE TRANSITION line. Do not list multiple candidates.
+- Do NOT create, modify, or delete files. Do NOT run shell commands.'
 
 # --- Parse CLI args ---
 while [[ $# -gt 0 ]]; do
@@ -122,14 +128,24 @@ run_test() {
   # (b) tells the agent which skill to activate, and (c) supplies the args.
   local user_prompt="$SHARED_PROMPT
 
-Activate the \`$skill\` skill and follow its instructions with the following input:
+Activate the \`$skill\` skill and follow its instructions."
+  if [ -n "$args" ]; then
+    user_prompt="$user_prompt
 
+User input / args for the skill:
 $args"
+  fi
   if [ -n "$extra_prompt" ]; then
     user_prompt="$user_prompt
 
-Additional context for this scenario:
+Scenario context (treat this as the current state of the work in progress):
 $extra_prompt"
+  fi
+  # Remind the model to check for existing WIP.
+  if [ -n "$fixture_wip" ]; then
+    user_prompt="$user_prompt
+
+A WIP file exists under workflow/wip/ from earlier steps of this workflow. Read it to understand the current state before picking a transition."
   fi
 
   # Build temp project dir with fixtures
