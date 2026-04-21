@@ -1,6 +1,6 @@
 ---
 name: product-context
-description: "Product workflow: generate the project's .claude/CLAUDE.md context file and transition to feature workflow"
+description: "Product workflow: generate the project's GEMINI.md context file and transition to feature workflow"
 ---
 
 # Product Context
@@ -25,8 +25,8 @@ Read the WIP file for all product artifacts:
 - Architecture (system design, data flow)
 - WBS (work packages, dependencies)
 
-### 2. Generate Project CLAUDE.md
-Create or update `.claude/CLAUDE.md` in the project root with:
+### 2. Generate Project GEMINI.md
+Create or update `GEMINI.md` in the project root with:
 
 ```markdown
 # <Project Name>
@@ -63,7 +63,7 @@ Create or update `.claude/CLAUDE.md` in the project root with:
 ### 3. Archive Product Artifacts
 - Update the WIP file state to `context (complete)`
 - Move to `workflow/archive/`
-- Ensure the WBS and roadmap remain accessible (copy key sections into CLAUDE.md or keep in `docs/`)
+- Ensure the WBS and roadmap remain accessible (copy key sections into GEMINI.md or keep in `docs/`)
 
 ### 4. Transition to Feature Workflow
 - Identify the first milestone from the roadmap

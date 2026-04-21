@@ -19,7 +19,7 @@ You are in the **feature** workflow at the **finalize** state.
 
 ### 1. Update Documentation
 - Update relevant docs to reflect the new feature (API docs, setup guides, etc.)
-- Update `.claude/CLAUDE.md` if new patterns or critical rules were discovered
+- Update `GEMINI.md` if new patterns or critical rules were discovered
 - Update the project's WBS and roadmap to reflect the completed feature
 
 ### 2. Full Backlog Review

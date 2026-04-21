@@ -32,7 +32,7 @@ Before planning, scan `workflow/backlog.md` (if it exists) for:
 Mention any relevant backlog items to the user.
 
 ### 2. Context Discovery
-- Read `.claude/CLAUDE.md` for project-specific rules
+- Read `GEMINI.md` for project-specific rules
 - Search for relevant files, existing patterns, documentation
 - Understand the scope and constraints
 

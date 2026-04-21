@@ -25,7 +25,7 @@ This is the first step of the per-phase verification loop: `build → verify-aut
 - Review the testing strategy from the plan
 
 ### 2. Run Automated Checks
-- Run the project's test suite (respect Docker rules from `.claude/CLAUDE.md`)
+- Run the project's test suite (respect Docker rules from `GEMINI.md`)
 - Run linters, type checkers, and static analysis if configured
 - Run any project-specific CI checks that can be executed locally
 - Focus on tests related to the current phase's changes

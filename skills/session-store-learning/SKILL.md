@@ -1,6 +1,6 @@
 ---
 name: session-store-learning
-description: "Session operation: classify a learning and persist it to the appropriate location (global ~/.claude/ or project .claude/)"
+description: "Session operation: classify a learning and persist it to the appropriate location (global ~/.gemini/ or project .gemini/)"
 ---
 
 # Session Store Learning
@@ -19,16 +19,16 @@ Evaluate the input learning from `{{args}}` or from the most recent reflection.
 ### 2. Classify & Route
 
 **Scope:**
-- **Global** — reusable across all projects → store in `~/.claude/`
-- **Project-specific** — relevant only to this project → store in `.claude/` (project root)
+- **Global** — reusable across all projects → store in `~/.gemini/`
+- **Project-specific** — relevant only to this project → store in `.gemini/` (project root)
 
 **Storage Type:**
 | Type | When | Location |
 |------|------|----------|
 | **Ignore** | Trivial, one-off, or already known | Don't store |
-| **Context Rule** | Critical convention or constraint | Global: `~/.claude/CLAUDE.md` / Project: `.claude/CLAUDE.md` |
-| **Memory** | Reusable insight about user, project, or approach | Global: `~/.claude/projects/*/memory/` / Project: `.claude/memory/` |
-| **Skill** | Complex procedural expertise worth codifying | Global: `~/.claude/skills/<name>/` / Project: `.claude/skills/<name>/` |
+| **Context Rule** | Critical convention or constraint | Global: `~/.gemini/GEMINI.md` / Project: `GEMINI.md` |
+| **Memory** | Reusable insight about user, project, or approach | Global: `~/.gemini/memory/` / Project: `.gemini/memory/` |
+| **Skill** | Complex procedural expertise worth codifying | Global: `~/.gemini/skills/<name>/` / Project: `.gemini/skills/<name>/` |
 
 ### 3. Propose Storage
 Present clearly:
@@ -50,7 +50,7 @@ Present:
 ### 5. Execute
 **ONLY** after receiving user confirmation:
 - Write the content to the proposed location
-- If updating an existing file (like CLAUDE.md), append or merge rather than overwrite
+- If updating an existing file (like GEMINI.md), append or merge rather than overwrite
 - Confirm what was saved and where
 
 ### 6. Verify

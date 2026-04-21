@@ -33,7 +33,7 @@ For each verified behavior, write tests that codify it:
 
 ### 3. Run All Tests
 - Run the full test suite (not just new tests) to ensure no regressions
-- Respect Docker rules from `.claude/CLAUDE.md`
+- Respect Docker rules from `GEMINI.md`
 
 ### 4. Evaluate Results
 

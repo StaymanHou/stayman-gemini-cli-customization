@@ -23,7 +23,7 @@ Back-loops exist between research↔roadmap, research↔arch, and wbs↔arch.
 | research | `/product-research` | Technical solution evaluation |
 | arch | `/product-arch` | System design for current phase |
 | wbs | `/product-wbs` | Work breakdown into packages |
-| context | `/product-context` | Generate CLAUDE.md, transition to features |
+| context | `/product-context` | Generate GEMINI.md, transition to features |
 
 ### Full Transition Table
 

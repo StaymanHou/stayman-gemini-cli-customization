@@ -27,7 +27,7 @@ You are in the **task** workflow at the **act** state.
 - Check for any "Session Pause Note" — if found, resume from the noted next step
 
 ### 2. Environment Check
-- Read `.claude/CLAUDE.md` for environment rules
+- Read `GEMINI.md` for environment rules
 - **Docker Rule:** If the project mandates Docker, ALL commands (pip, python, npm, etc.) MUST run inside the container. Only git commands and basic file operations run on the host.
 
 ### 3. Implement

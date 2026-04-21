@@ -32,7 +32,7 @@ Mention any relevant items to the user.
 - Read the spec in `workflow/wip/` (if complex feature)
 - Review research findings (if any)
 - Examine existing codebase structure and patterns
-- Read `.claude/CLAUDE.md` for project rules
+- Read `GEMINI.md` for project rules
 
 ### 3. Create Phased Plan
 
