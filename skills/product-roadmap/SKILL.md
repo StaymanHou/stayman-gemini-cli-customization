@@ -20,27 +20,31 @@ Also entered via:
 ## Procedure
 
 ### 1. Review Vision
-Read the product WIP file in `workflow/wip/` for the vision document.
+Read `docs/product/vision.md` for the vision document.
 
 ### 2. Create Roadmap
-Break the vision into logical phases with clear milestones:
+Break the vision into logical phases with clear milestones.
 
-Add to the WIP file:
+Write `docs/product/roadmap.md`:
 
 ```markdown
-## Roadmap
+# Product Roadmap
 
-### Phase 1: <name> (e.g., PoC, Prototype)
+**Workflow:** product
+**State:** roadmap
+**Updated:** <YYYY-MM-DD>
+
+## Phase 1: <name> (e.g., PoC, Prototype)
 **Goal:** <what this phase proves or delivers>
 **Milestones:**
 - [ ] Milestone 1.1
 - [ ] Milestone 1.2
 **Exit Criteria:** <how we know this phase is done>
 
-### Phase 2: <name> (e.g., MVP)
+## Phase 2: <name> (e.g., MVP)
 ...
 
-### Phase 3: <name> (e.g., V1)
+## Phase 3: <name> (e.g., V1)
 ...
 ```
 
@@ -49,14 +53,16 @@ Each phase should have:
 - Concrete deliverables
 - Exit criteria for moving to the next phase
 
+This is a long-lived product artifact — it stays in `docs/product/` after the workflow completes.
+
 ### 3. Handle Back-Loop (if from P4)
 If research invalidated assumptions:
-- Document what changed and why
+- Document what changed and why (add a `## Revision Notes` section)
 - Revise affected phases
 - Note which assumptions were corrected
 
 ### 4. Hand Off
-- Update state to `roadmap (complete)`
+- Update the state line in `docs/product/roadmap.md` to `roadmap (complete)`
 - Tell user to run `/product-research` to investigate technical solutions for the next phase
 
 **Context:** {{args}}

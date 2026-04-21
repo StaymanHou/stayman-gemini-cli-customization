@@ -26,10 +26,10 @@ Engage with the user to establish:
 - **Core Principles:** Guiding values for the product
 
 ### 2. Create Vision Document
-Create `workflow/wip/<product-name>.md` with:
+Create `docs/product/vision.md` (create the `docs/product/` directory if it does not exist):
 
 ```markdown
-# Product: <name>
+# Product Vision: <name>
 
 **Workflow:** product
 **State:** vision
@@ -48,8 +48,10 @@ Create `workflow/wip/<product-name>.md` with:
 <guiding values>
 ```
 
+This is a long-lived product artifact — it lives in `docs/product/` and is not archived when the product workflow completes.
+
 ### 3. Hand Off
-- Update state to `vision (complete)`
+- Update the state line in `docs/product/vision.md` to `vision (complete)`
 - Tell user to run `/product-roadmap` to break the vision into phases
 
 **STOP** — do NOT start roadmapping yet.

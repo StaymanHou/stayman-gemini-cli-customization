@@ -21,16 +21,20 @@ Also entered via:
 ## Procedure
 
 ### 1. Review Inputs
-- Read the WIP file for vision, roadmap, research, and architecture
+- Read `docs/product/vision.md`, `docs/product/roadmap.md`, `docs/product/research.md`, and `docs/product/arch.md`
 - If entering from SURFACE-IN (P11), read the surface note and integrate the new work item
 
 ### 2. Decompose into Work Packages
-Add to the WIP file:
+Write `docs/product/wbs.md`:
 
 ```markdown
-## Work Breakdown Structure
+# Work Breakdown Structure
 
-### WP1: <name>
+**Workflow:** product
+**State:** wbs
+**Updated:** <YYYY-MM-DD>
+
+## WP1: <name>
 **Description:** <what this covers>
 **Phase:** <which roadmap phase>
 **Dependencies:** <prerequisite WPs>
@@ -39,7 +43,7 @@ Add to the WIP file:
 - [ ] Task 1.1
 - [ ] Task 1.2
 
-### WP2: <name>
+## WP2: <name>
 ...
 ```
 
@@ -49,8 +53,10 @@ Each work package should:
 - Have clear dependencies identified
 - Be sized appropriately (a WP that's XL should probably be split)
 
+This is a long-lived product artifact — it stays in `docs/product/` after the workflow completes.
+
 ### 3. Dependency Map
-Identify the critical path and any parallel tracks.
+Identify the critical path and any parallel tracks (add a `## Dependency Map` section).
 
 ### 4. SURFACE-IN Handling (P11)
 If new work was surfaced from a lower level:

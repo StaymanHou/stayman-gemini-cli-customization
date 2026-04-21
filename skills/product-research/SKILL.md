@@ -21,7 +21,7 @@ Also entered via:
 ## Procedure
 
 ### 1. Identify Phase Focus
-- Read the WIP file for vision and roadmap
+- Read `docs/product/vision.md` and `docs/product/roadmap.md`
 - Determine the current/next active phase from the roadmap
 - Focus research on that specific phase's needs
 
@@ -35,25 +35,32 @@ Also entered via:
 - Use web search for up-to-date information — online official docs override model knowledge
 
 ### 3. Document Findings
-Add to the WIP file:
+Write `docs/product/research.md`:
 
 ```markdown
-## Research
+# Product Research
 
+**Workflow:** product
+**State:** research
+**Updated:** <YYYY-MM-DD>
 **Phase Focus:** <which phase this research supports>
 
-### Recommended Stack
+## Recommended Stack
 - <technology>: <why chosen>
 
-### Trade-offs
+## Trade-offs
 - <choice>: <pro> vs <con>
 
-### Risks
+## Risks
 - <identified risk>
 
-### References
+## References
 - <links to docs, repos>
 ```
+
+This is a long-lived product artifact — it stays in `docs/product/` after the workflow completes.
+
+If this is a back-loop entry (P6), append a new `## Follow-up: <YYYY-MM-DD>` section rather than overwriting prior findings.
 
 ### 4. Evaluate Next Step
 - If findings are solid and roadmap holds → recommend `/product-arch` (P5)

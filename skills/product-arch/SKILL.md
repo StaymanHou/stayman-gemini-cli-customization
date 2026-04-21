@@ -22,8 +22,8 @@ Also entered via:
 ## Procedure
 
 ### 1. Review Inputs
-- Read the WIP file for vision, roadmap, and research findings
-- If entering from WBS back-loop (P8), read the specific gaps identified
+- Read `docs/product/vision.md`, `docs/product/roadmap.md`, and `docs/product/research.md`
+- If entering from WBS back-loop (P8), read `docs/product/wbs.md` for the specific gaps identified
 - If entering from SURFACE-IN (P12), read the surface note for context
 
 ### 2. Scope Definition
@@ -32,28 +32,35 @@ Also entered via:
 - **Forward Compatibility:** Ensure current choices don't make future phases impossible
 
 ### 3. Define Architecture
-Add to the WIP file:
+Write `docs/product/arch.md`:
 
 ```markdown
-## Architecture
+# Product Architecture
 
+**Workflow:** product
+**State:** arch
+**Updated:** <YYYY-MM-DD>
 **Phase:** <which phase>
 
-### Tech Stack
+## Tech Stack
 - Language: <choice> — <why>
 - Framework: <choice> — <why>
 - Database: <choice> — <why>
 - Infrastructure: <choice> — <why>
 
-### System Design
+## System Design
 <component descriptions or MermaidJS diagrams>
 
-### Data Flow
+## Data Flow
 <how data moves through the system for this phase>
 
-### Key Decisions
+## Key Decisions
 - <decision>: <rationale>
 ```
+
+This is a long-lived product artifact — it stays in `docs/product/` after the workflow completes.
+
+If this is a back-loop or SURFACE-IN entry, append a new `## Revision: <YYYY-MM-DD>` section rather than overwriting prior decisions.
 
 ### 4. Evaluate Next Step
 - If architecture is solid → recommend `/product-wbs` (P7)

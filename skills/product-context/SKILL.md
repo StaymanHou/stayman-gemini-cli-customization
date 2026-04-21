@@ -18,12 +18,12 @@ This is the **terminal state** of the product workflow.
 ## Procedure
 
 ### 1. Gather Inputs
-Read the WIP file for all product artifacts:
-- Vision (purpose, audience, metrics)
-- Roadmap (phases, milestones)
-- Research (tech stack, trade-offs)
-- Architecture (system design, data flow)
-- WBS (work packages, dependencies)
+Read each product artifact from `docs/product/`:
+- `vision.md` — purpose, audience, metrics
+- `roadmap.md` — phases, milestones
+- `research.md` — tech stack, trade-offs
+- `arch.md` — system design, data flow
+- `wbs.md` — work packages, dependencies
 
 ### 2. Generate Project GEMINI.md
 Create or update `GEMINI.md` in the project root with:
@@ -58,15 +58,30 @@ Create or update `GEMINI.md` in the project root with:
 
 ## Key Decisions
 <Important architectural and product decisions with rationale>
+
+## Product Docs
+See `docs/product/` for vision, roadmap, research, arch, and WBS.
 ```
 
-### 3. Archive Product Artifacts
-- Update the WIP file state to `context (complete)`
-- Move to `workflow/archive/`
-- Ensure the WBS and roadmap remain accessible (copy key sections into GEMINI.md or keep in `docs/`)
+### 3. Finalize Product Artifacts
+The product docs in `docs/product/` are **long-lived** — do NOT move them to `workflow/archive/`. They remain in place as the canonical source for vision, roadmap, research, arch, and WBS.
+
+Write `docs/product/context.md` recording the context-generation step:
+
+```markdown
+# Product Context (Generated)
+
+**Workflow:** product
+**State:** context (complete)
+**Generated:** <YYYY-MM-DD>
+
+GEMINI.md was generated from the artifacts in this directory.
+```
+
+Update the state line in each of `vision.md`, `roadmap.md`, `research.md`, `arch.md`, `wbs.md` to `(complete)` if not already set.
 
 ### 4. Transition to Feature Workflow
-- Identify the first milestone from the roadmap
+- Identify the first milestone from `docs/product/roadmap.md`
 - Tell the user: "Product planning is complete. Start the first feature from the roadmap by running `/feature-spec` (or `/feature-plan` if it's small/simple)."
 - Evaluate the first milestone against the small/simple criteria to recommend the right entry point
 
