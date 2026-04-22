@@ -44,6 +44,7 @@ Create or update `GEMINI.md` in the project root with the following structure. *
 ### 1. Docker Environment (MANDATORY)
 Setting up the Docker development environment is the **required first step**.
 - **Prerequisite:** Ensure the Docker daemon is running (Hard-Blocker).
+- **Port Conflicts:** NEVER stop existing containers or local services to resolve port conflicts. Instead, remap this project's host ports (e.g., via `.env`) to avoid collisions. Assume concurrent development of other projects.
 - **Setup:** `docker compose up -d --build`
 - **Verification:** `docker compose ps` to ensure all services are healthy.
 

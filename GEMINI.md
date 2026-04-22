@@ -26,6 +26,10 @@ Skills provide deep, procedural expertise for specific domains.
 
 ## Development Conventions
 
+### Environment & Infrastructure
+*   **Port Conflicts:** NEVER stop existing containers or local services (e.g., Postgres, Redis) to resolve port conflicts. Instead, remap this project's host ports (e.g., via `.env` or `docker-compose.override.yml`) to avoid the collision. Assume the user is developing multiple projects simultaneously.
+*   **Docker Hard-Blocker:** If the Docker daemon is unreachable, STOP and ask the user to start it. Never attempt to run project-standard commands on the host OS as a fallback.
+
 ### Adding a New Command
 1.  Navigate to the appropriate subdirectory in `commands/` (e.g., `workflow/feature/`).
 2.  Create a `<command-name>.toml` file.
