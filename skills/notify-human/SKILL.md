@@ -16,13 +16,23 @@ You are about to request human input. Before doing so, send a Telegram notificat
 **Send the notification:**
 
 ```bash
-curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "chat_id": "'"${TELEGRAM_CHAT_ID}"'",
-    "text": "🔔 Gemini CLI needs you\n\nProject: <project>\nDone: <done summary>\nNeed: <what is needed>",
-    "parse_mode": "HTML"
-  }'
+(
+  # Fallback: Load global telegram config if missing from environment
+  if [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ]; then
+    [ -f ~/.env ] && export $(grep -E '^TELEGRAM_(BOT_TOKEN|CHAT_ID)=' ~/.env | xargs)
+    [ -f ~/.gemini/.env ] && export $(grep -E '^TELEGRAM_(BOT_TOKEN|CHAT_ID)=' ~/.gemini/.env | xargs)
+  fi
+
+  if [ -n "${TELEGRAM_BOT_TOKEN}" ] && [ -n "${TELEGRAM_CHAT_ID}" ]; then
+    curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "chat_id": "'"${TELEGRAM_CHAT_ID}"'",
+        "text": "🔔 Gemini CLI needs you\n\nProject: <project>\nDone: <done summary>\nNeed: <what is needed>",
+        "parse_mode": "HTML"
+      }'
+  fi
+)
 ```
 
 Replace `<project>`, `<done summary>`, and `<what is needed>` with the actual values. Keep each line under 100 characters.

@@ -48,7 +48,7 @@ cd ~/Personal/projects/my-gemini-customization
 
 ### Global notify-human enforcement
 
-`~/.gemini/GEMINI.md` enforces the `notify-human` skill before any user-facing question. Requires:
+`~/.gemini/GEMINI.md` enforces the `notify-human` skill before any user-facing question. To enable notifications globally, export these in your shell profile (e.g., `~/.zshrc` or `~/.bashrc`):
 
 ```bash
 export TELEGRAM_BOT_TOKEN=...

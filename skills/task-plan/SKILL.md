@@ -65,10 +65,13 @@ Create a markdown file in `workflow/wip/<task-slug>.md` with this structure:
 
 ## Verification
 - How to verify the changes (tests, commands)
+- **CRITICAL: ALL commands MUST run in Docker (e.g., `docker compose exec <service> <cmd>`)**.
+- [MANDATORY] Docker Check: Ensure all services are up and healthy before implementation.
 ```
 
 ### 5. Stop and Hand Off
 After creating the plan:
 - Present a high-level summary
 - **STOP** — do NOT start implementing
-- Tell the user to run `/task-act` to begin implementation
+- **Verify Docker is running** before recommending `/task-act`.
+- Tell the user to run `/task-act` to begin implementation.

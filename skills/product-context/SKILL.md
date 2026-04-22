@@ -26,7 +26,7 @@ Read each product artifact from `docs/product/`:
 - `wbs.md` — work packages, dependencies
 
 ### 2. Generate Project GEMINI.md
-Create or update `GEMINI.md` in the project root with:
+Create or update `GEMINI.md` in the project root with the following structure. **Note: Docker setup and usage are MANDATORY and must be the first instruction.**
 
 ```markdown
 # <Project Name>
@@ -41,17 +41,23 @@ Create or update `GEMINI.md` in the project root with:
 <Generated directory tree of key directories>
 
 ## Getting Started
-### Prerequisites
-<What needs to be installed>
+### 1. Docker Environment (MANDATORY)
+Setting up the Docker development environment is the **required first step**.
+- **Prerequisite:** Ensure the Docker daemon is running (Hard-Blocker).
+- **Setup:** `docker compose up -d --build`
+- **Verification:** `docker compose ps` to ensure all services are healthy.
 
-### Setup
-<Configuration steps>
+### 2. Local Configuration
+<Any .env setup or local-only steps needed before Docker can run>
 
-### Docker Instructions (if applicable)
-<Standard Docker commands>
+## Development Workflow
+**CRITICAL: All development commands (tests, linting, migrations, etc.) MUST be executed inside the Docker container(s).**
 
-## Development Conventions
-<Code style, testing conventions, Docker rules if applicable>
+### Standard Commands
+- **Enter Container:** `docker compose exec <service> bash`
+- **Run Tests:** `docker compose exec <service> <test-cmd>`
+- **Linting:** `docker compose exec <service> <lint-cmd>`
+- **Logs:** `docker compose logs -f <service>`
 
 ## Current Phase
 <Active roadmap phase and its goals>

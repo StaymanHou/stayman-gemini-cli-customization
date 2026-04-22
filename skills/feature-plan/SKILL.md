@@ -44,8 +44,13 @@ Mention any relevant items to the user.
 
 ## Implementation Phases
 
+### Phase 0: Environment (MANDATORY)
+- [ ] Ensure Docker daemon is running (Hard-Blocker).
+- [ ] Run `docker compose up -d --build` to start development environment.
+- [ ] Verify services are healthy with `docker compose ps`.
+
 ### Phase 1: <title>
-- [ ] Step 1.1
+- [ ] Step 1.1 (inside Docker: `docker compose exec <service> <cmd>`)
 - [ ] Step 1.2
 - ...
 
@@ -54,10 +59,10 @@ Mention any relevant items to the user.
 - ...
 
 ## Testing Strategy
-- How each phase will be verified
+- How each phase will be verified **inside Docker**.
 
 ## Migration Plan
-- Database or data migrations (if needed)
+- Database or data migrations (must run via `docker compose exec`).
 ```
 
 Each phase should be a coherent unit that can go through the `build → verify-auto → verify-human → verify-codify` loop independently.

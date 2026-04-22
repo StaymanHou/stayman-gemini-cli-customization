@@ -51,6 +51,12 @@ Write `docs/product/arch.md`:
 ## System Design
 <component descriptions or MermaidJS diagrams>
 
+### Dockerization Strategy (MANDATORY)
+- **Containerization Plan:** How components are split into containers.
+- **Docker Compose:** Outline the `docker-compose.yaml` services and dependencies.
+- **Shared Volumes/Networks:** Define how data persists and components communicate.
+- **Dev Container:** (Optional) VS Code Dev Container configuration if applicable.
+
 ## Data Flow
 <how data moves through the system for this phase>
 
