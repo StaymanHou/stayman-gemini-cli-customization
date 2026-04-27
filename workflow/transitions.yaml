@@ -65,7 +65,7 @@ product:
       type: surface-in
 
 feature:
-  states: [spec, research, plan, build, verify-auto, verify-human, verify-codify, ship, finalize, refactor]
+  states: [spec, research, plan, build, verify-auto, verify-self, verify-human, verify-codify, ship, finalize, refactor]
   entry:
     complex: spec
     simple: plan
@@ -76,7 +76,7 @@ feature:
     - Describable in ≤ 4 sentences
     - Estimated < 4 hours of agent work
     - Estimated ≤ ~200 lines of new/changed code
-  per_phase_loop: [build, verify-auto, verify-human, verify-codify]
+  per_phase_loop: [build, verify-auto, verify-self, verify-human, verify-codify]
   transitions:
     - id: F1
       from: ENTRY
@@ -118,8 +118,17 @@ feature:
       type: back-loop
     - id: F10
       from: verify-auto
-      to: verify-human
+      to: verify-self
       condition: Tests pass
+    - id: F10a
+      from: verify-self
+      to: verify-human
+      condition: All blocking outcomes pass
+    - id: F10b
+      from: verify-self
+      to: build
+      condition: "Back-loop: agent finds issues during self-verification"
+      type: back-loop
     - id: F11
       from: verify-human
       to: verify-codify

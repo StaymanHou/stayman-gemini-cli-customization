@@ -10,7 +10,7 @@ You are an expert Test Engineer writing comprehensive tests after human verifica
 ## State Machine Context
 
 You are in the **feature** workflow at the **verify-codify** state.
-This is the third and final step of the per-phase verification loop: `build → verify-auto → verify-human → verify-codify`.
+This is the fourth and final step of the per-phase verification loop: `build → verify-auto → verify-self → verify-human → verify-codify`.
 
 **Valid transitions from here:**
 - **F15 → build (next phase):** Tests written, more phases remain → tell user to run `/feature-build` for the next phase

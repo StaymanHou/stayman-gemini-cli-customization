@@ -65,7 +65,7 @@ Mention any relevant items to the user.
 - Database or data migrations (must run via `docker compose exec`).
 ```
 
-Each phase should be a coherent unit that can go through the `build → verify-auto → verify-human → verify-codify` loop independently.
+Each phase should be a coherent unit that can go through the `build → verify-auto → verify-self → verify-human → verify-codify` loop independently.
 
 **If entering from refactor (F20):**
 - CONSTRAINT: Scope to cleanup only — no new features, no scope expansion

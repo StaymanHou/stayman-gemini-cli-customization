@@ -161,7 +161,7 @@ scenarios:
     max_retries: 2
 
   - id: F10
-    name: "feature:verify-auto → verify-human when tests pass"
+    name: "feature:verify-auto → verify-self when tests pass"
     skill: feature-verify-auto
     args: "phase 1"
     fixtures:
@@ -173,10 +173,47 @@ scenarios:
     expect:
       transition_id: F10
       contains_any:
-        - "/feature-verify-human"
+        - "/feature-verify-self"
       not_contains:
         - "/feature-build"
         - "/feature-spec"
+        - "/feature-verify-human"
+    max_retries: 2
+
+  - id: F10a
+    name: "feature:verify-self → verify-human when clean"
+    skill: feature-verify-self
+    args: "phase 1"
+    fixtures:
+      gemini_md: fixtures/GEMINI.md
+      wip: fixtures/wip/feature-verify-self-passed.md
+    system_prompt_extra: |
+      Self-verification is complete. All observable outcomes passed.
+      No blocking issues found.
+    expect:
+      transition_id: F10a
+      contains_any:
+        - "/feature-verify-human"
+      not_contains:
+        - "/feature-build"
+    max_retries: 2
+
+  - id: F10b
+    name: "feature:verify-self → build when blocking failure"
+    skill: feature-verify-self
+    args: "phase 1"
+    fixtures:
+      gemini_md: fixtures/GEMINI.md
+      wip: fixtures/wip/feature-verify-self-failed.md
+    system_prompt_extra: |
+      Self-verification found a blocking issue: the database connection
+      times out when saving preferences. This needs to be fixed.
+    expect:
+      transition_id: F10b
+      contains_any:
+        - "/feature-build"
+      not_contains:
+        - "/feature-verify-human"
     max_retries: 2
 
   - id: F11
