@@ -29,7 +29,8 @@ workflow/archive/      # completed items
 
 ## Telegram notify-human (GLOBAL)
 
-**ALWAYS activate the `notify-human` skill before requesting human input** — any substantive question, decision point, review request, verification checklist, or any moment the user might have walked away from the terminal. This is non-negotiable across all projects and contexts.
+**ALWAYS activate the `notify-human` skill before requesting human input** — any substantive question, decision point, review request, verification checklist, or any moment the user might have walked away from the terminal. This is non-negotiable across all projects and contexts. **Err on the side of over-notifying.**
 
-- Requires `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` environment variables. If unset, the skill no-ops silently.
+- Requires `GEMINI_CLI_TELEGRAM_BOT_TOKEN` and `GEMINI_CLI_TELEGRAM_CHAT_ID` environment variables. If unset, the skill no-ops silently.
 - **Do NOT notify for:** trivial yes/no confirmations during routine steps, or tool permission prompts.
+- **DO notify for:** EVERYTHING ELSE that requires the user to read or type.

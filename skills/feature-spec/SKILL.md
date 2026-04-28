@@ -24,6 +24,9 @@ This state is the entry point for **complex** features — those that fail the s
 
 ## Procedure
 
+### 0. Invoke `/notify-human`
+- Before asking any questions, alert the user that you are ready to define the specification.
+
 ### 1. Elicit Requirements
 - Ask the user questions to clarify scope, user persona, and success criteria
 - Identify technical and business constraints

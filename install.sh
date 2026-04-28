@@ -130,5 +130,5 @@ echo
 echo "Done. Symlinks and GEMINI.md block are in place."
 echo
 echo "Next steps:"
-echo "  1. Ensure \$TELEGRAM_BOT_TOKEN and \$TELEGRAM_CHAT_ID are exported in your shell profile"
+echo "  1. Ensure \$GEMINI_CLI_TELEGRAM_BOT_TOKEN and \$GEMINI_CLI_TELEGRAM_CHAT_ID are exported in your shell profile"
 echo "     (e.g., ~/.zshrc or ~/.bashrc) so notify-human works globally."

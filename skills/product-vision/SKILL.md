@@ -17,6 +17,9 @@ This is the entry point for all new product initiatives.
 
 ## Procedure
 
+### 0. Invoke `/notify-human`
+- Alert the user that you are ready to establish the product vision.
+
 ### 1. Define the Vision
 Engage with the user to establish:
 - **Core Problem:** What are we solving? Why does it matter?

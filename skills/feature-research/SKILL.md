@@ -40,6 +40,8 @@ Document findings directly in the WIP file under a `## Research` section:
 - Potential risks identified
 - Recommended approaches with trade-offs
 
+Invoke `/notify-human` before presenting your report and recommendation — the user needs to evaluate the findings.
+
 ### 4. Evaluate Next Step
 
 **If this is a normal research step:**

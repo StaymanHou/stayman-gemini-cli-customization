@@ -18,16 +18,16 @@ You are about to request human input. Before doing so, send a Telegram notificat
 ```bash
 (
   # Fallback: Load global telegram config if missing from environment
-  if [ -z "${TELEGRAM_BOT_TOKEN}" ] || [ -z "${TELEGRAM_CHAT_ID}" ]; then
-    [ -f ~/.env ] && export $(grep -E '^TELEGRAM_(BOT_TOKEN|CHAT_ID)=' ~/.env | xargs)
-    [ -f ~/.gemini/.env ] && export $(grep -E '^TELEGRAM_(BOT_TOKEN|CHAT_ID)=' ~/.gemini/.env | xargs)
+  if [ -z "${GEMINI_CLI_TELEGRAM_BOT_TOKEN}" ] || [ -z "${GEMINI_CLI_TELEGRAM_CHAT_ID}" ]; then
+    [ -f ~/.env ] && export $(grep -E '^GEMINI_CLI_TELEGRAM_(BOT_TOKEN|CHAT_ID)=' ~/.env | xargs)
+    [ -f ~/.gemini/.env ] && export $(grep -E '^GEMINI_CLI_TELEGRAM_(BOT_TOKEN|CHAT_ID)=' ~/.gemini/.env | xargs)
   fi
 
-  if [ -n "${TELEGRAM_BOT_TOKEN}" ] && [ -n "${TELEGRAM_CHAT_ID}" ]; then
-    curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+  if [ -n "${GEMINI_CLI_TELEGRAM_BOT_TOKEN}" ] && [ -n "${GEMINI_CLI_TELEGRAM_CHAT_ID}" ]; then
+    curl -s -X POST "https://api.telegram.org/bot${GEMINI_CLI_TELEGRAM_BOT_TOKEN}/sendMessage" \
       -H "Content-Type: application/json" \
       -d '{
-        "chat_id": "'"${TELEGRAM_CHAT_ID}"'",
+        "chat_id": "'"${GEMINI_CLI_TELEGRAM_CHAT_ID}"'",
         "text": "🔔 Gemini CLI needs you\n\nProject: <project>\nDone: <done summary>\nNeed: <what is needed>",
         "parse_mode": "HTML"
       }'
@@ -37,7 +37,7 @@ You are about to request human input. Before doing so, send a Telegram notificat
 
 Replace `<project>`, `<done summary>`, and `<what is needed>` with the actual values. Keep each line under 100 characters.
 
-If `$TELEGRAM_BOT_TOKEN` or `$TELEGRAM_CHAT_ID` is not set, skip the notification silently and proceed.
+If `$GEMINI_CLI_TELEGRAM_BOT_TOKEN` or `$GEMINI_CLI_TELEGRAM_CHAT_ID` is not set, skip the notification silently and proceed.
 
 **After sending**, proceed with your question to the user. Do NOT wait for a response from Telegram.
 
